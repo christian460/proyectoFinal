@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 urlpatterns=[
 	path("", views.index, name="index"),
-	path("index", views.regreso, name="index")
+	path("index", views.regreso, name="index"),
+	path("login", views.login, name="login"),
+	path("regisropa", views.regisropa, name="regisropa"),
+	path('cliente/', include('cliente.urls')),
 ]
