@@ -4,8 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>winter</title>
-    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <title>Moda Top</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- animate CSS -->
@@ -35,7 +34,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-11">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index"> <img src="{% static 'img/logo.png' %}" alt="logo"> </a>
+                        <a class="navbar-brand" href="index"> <img Width="130px" src="{% static 'img/logo.jpg' %}" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -139,10 +138,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
-                            <h2>New to our Shop?</h2>
-                            <p>There are advances being made in science and technology
-                                everyday, and a good example of this is the</p>
-                            <a href="registro" class="btn_3">Create an Account</a>
+                            <h2>Eres nuevo aqui?</h2>
+                            <p>No te pierdas los beneficios que tiene el tener una cuenta</p>
+                            <a href="registro" class="btn_3">Create una cuenta</a>
                         </div>
                     </div>
                 </div>
@@ -155,16 +153,14 @@
                             <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             {% csrf_token %}
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="username" name="username" value=""
-                                        placeholder="Username">
+                                    <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="password" value=""
-                                        placeholder="Password">
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required>
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <button type="submit" value="submit" class="btn_3">
-                                        log in
+                                        Iniciar Sesion
                                     </button>
                                     
                                 </div>
