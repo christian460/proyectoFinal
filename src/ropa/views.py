@@ -31,3 +31,6 @@ def regisropa(request):
 			return redirect('/')
 	else:
 		return render(request,'registro_ropa.html')
+
+def contactar(request):
+	return render(request,"contact.html")
