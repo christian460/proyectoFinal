@@ -36,12 +36,13 @@ def registro(request):
 
 def login(request):
 	if request.method == 'POST':
+		print('lol')
 		username = request.POST['username']
 		password = request.POST['password']
 		user = auth.authenticate(username=username,password=password)
-
 		if user is not None:
 			auth.login(request,user)
+			print('Inicio secion')
 			return redirect("/")
 		else:
 			messages.info(request,'Datos erroneos')
