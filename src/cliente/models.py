@@ -5,4 +5,5 @@ from django.db import models
 class Cliente(AbstractUser):
 	telefono=models.IntegerField(default=0)
 	direccion=models.CharField(max_length=100, default=' ')
+	sexo=models.CharField(max_length=100, default=' ')
 		
