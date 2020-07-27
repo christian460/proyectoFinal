@@ -1,3 +1,15 @@
+<html>
+<head>
+<script>    
+$(document).ready(function(){
+    $("#registrar").click(function(){
+    $("#demo").load("cliente/registro")
+    });
+});
+</script>
+</head>
+<body>
+<div id="demo">
 <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -22,7 +34,7 @@
                         <div class="login_part_text_iner">
                             <h2>Eres nuevo aqui?</h2>
                             <p>No te pierdas los beneficios que tiene el tener una cuenta</p>
-                            <a href="cliente/registro" class="btn_3">Create una cuenta</a>
+                            <a id="registrar" class="btn_3">Create una cuenta</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +44,8 @@
                         <div class="login_part_form_iner">
                             <h3>Bienvenido de nuevo<br>
                                 Inicia Sesión Ahora</h3>
-                            <form class="row contact_form" method="post" id="datos">
+                            <form class="row contact_form" action="cliente/login" method="post" novalidate="novalidate">
+
                             {% csrf_token %}
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username" required>
@@ -41,7 +54,7 @@
                                     <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <button type="submit" value="submit" class="btn_3">
+                                    <button type="submit" value="submit" class="btn_3" >
                                         Iniciar Sesion
                                     </button>
                                     
@@ -58,20 +71,18 @@
             </div>
         </div>
     </section>
+    </div>
     <script>
-        $(document).on('submit','#datos',function(e)){
-            e.preventDefault();
-
-            $.ajax({
-                type:'POST',
-                url:'/cliente/registro',
-                data:{
-                    username:$('#username').val(),
-                    password:$('#password').val(),
-                },
-                sucess:function(){
-
-                }
+        $(function(){
+            $('#iniciar').click(function(){
+                $('cliente/login',{
+                    username:"christian",
+                    password:"170801"
+                },function(data,status{
+                   console.log(data) 
+                });
             });
-        }    
+        });
     </script>
+</body>
+</html>

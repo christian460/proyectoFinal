@@ -125,4 +125,7 @@ STATICFILES_DIRS=[
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-AUTH_USER_MODEL = "cliente.Cliente" 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTH_USER_MODEL = 'cliente.Cliente'
