@@ -45,6 +45,7 @@ $(document).ready(function(){
                             <h3>Bienvenido de nuevo<br>
                                 Inicia Sesión Ahora</h3>
                             <form class="row contact_form" action="cliente/login" method="post" novalidate="novalidate">
+
                             {% csrf_token %}
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username" required>
