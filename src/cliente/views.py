@@ -46,7 +46,7 @@ def login(request):
 			return redirect("/")
 		else:
 			messages.info(request,'Datos erroneos')
-			return redirect('login')
+			return redirect('/')
 	else:
 		return render(request,'login.html')
 
