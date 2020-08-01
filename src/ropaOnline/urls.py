@@ -19,9 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-	path('', include('ropa.urls')),
     path('admin/', admin.site.urls),
-    path('ropa/', include('ropa.urls')),
+    path('', include('wear.urls')),
+    path('ropa/', include('wear.urls')),
+    path('',include('accounts.urls')),
     
 ]
 
