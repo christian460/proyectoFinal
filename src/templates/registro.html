@@ -18,7 +18,7 @@
                         <div class="login_part_form_iner">
                             <h3>Bienvenido<br>
                                 Ingrese sus Datos</h3><br>
-                            <form class="row contact_form" action="cliente/registro" method="post">
+                            <form class="row contact_form" method="post">
                                 {% csrf_token %}
                                 <table align="center">
                                     <tr>
@@ -28,34 +28,30 @@
                                     <tr>
                                         <td HEIGHT="40">Apellidos:</td> 
                                         <td HEIGHT="40"><input type="text" name="last_name" placeholder="Apellidos" required></td>
+                                    </tr>                                                                                                    
+                                    <tr>
+                                        <td HEIGHT="40">Telefono:</td> 
+                                        <td HEIGHT="40"><input type="number" name="phone" placeholder="Telefono" required></td>
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40">Usuario:</td> 
-                                        <td HEIGHT="40"><input type="text" name="username" placeholder="Usuario" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Contraseña:</td> 
-                                        <td HEIGHT="40"><input type="password" name="password1" placeholder="Contraseña" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Contraseña nuevamente:</td> 
-                                        <td HEIGHT="40"><input type="password" name="password2" placeholder="Contraseña nuevamente" required></td>
+                                        <td HEIGHT="40">Direccion: </td> 
+                                        <td HEIGHT="40"><input type="text" name="direction" placeholder="Direccion" required></td>
                                     </tr>
                                     <tr>
                                         <td HEIGHT="40">Email:</td> 
                                         <td HEIGHT="40"><input type="text" name="email" placeholder="Email" required></td>
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40">Telefono:</td> 
-                                        <td HEIGHT="40"><input type="text" name="telefono" placeholder="Telefono" required></td>
+                                        <td HEIGHT="40">Contraseña:</td> 
+                                        <td HEIGHT="40"><input type="password" name="password" placeholder="Contraseña" required></td>
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40">Direccion: </td> 
-                                        <td HEIGHT="40"><input type="text" name="direccion" placeholder="Direccion" required></td>
+                                        <td HEIGHT="40">Contraseña nuevamente:</td> 
+                                        <td HEIGHT="40"><input type="password" name="password2" placeholder="Contraseña nuevamente" required></td>
                                     </tr>
                                     <tr>
                                         <td HEIGHT="60"><input type="submit" value="Registrar"></td>
-                                    </tr>
+                                    </tr>                                    
                                 </table>
                                 
                             </form>
