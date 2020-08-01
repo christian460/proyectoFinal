@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Ropa
+from .models import Wear
 from django.contrib import messages
 # Create your views here.
 

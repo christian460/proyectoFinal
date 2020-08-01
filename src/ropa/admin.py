@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from.models import Ropa
+from.models import Wear
 
-admin.site.register(Ropa)
+admin.site.register(Wear)
