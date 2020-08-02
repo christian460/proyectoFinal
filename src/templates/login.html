@@ -33,11 +33,7 @@ $(document).ready(function(){
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
                             <h2>Eres nuevo aqui?</h2>
-                            <p></p>
                             <p>No te pierdas los beneficios que tiene el tener una cuenta</p>
-                            {% for message in messages %}
-                               <p>{{ message }}</p>
-                            {% endfor %}
                             <a id="registrar" class="btn_3">Create una cuenta</a>
                         </div>
                     </div>
@@ -49,7 +45,6 @@ $(document).ready(function(){
                             <h3>Bienvenido de nuevo<br>
                                 Inicia Sesión Ahora</h3>
                             <form class="row contact_form" action="cliente/login" method="post" novalidate="novalidate">
-
                             {% csrf_token %}
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username" required>
@@ -63,7 +58,12 @@ $(document).ready(function(){
                                     </button>
                                     
                                 </div>
-                            </form>                            
+                            </form>
+                            <div>
+                                {% for message in messages %}
+                                    <h3> {{message}} </h3>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
