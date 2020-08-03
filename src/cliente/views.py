@@ -26,7 +26,7 @@ def registro(request):
 				user= User.objects.create_user(username=usuario, password=contraseña1, email=email, first_name=nombre, last_name=apellidos, telefono=telefono, direccion=direccion)
 				user.save();
 				print ('Usuario creado')
-				return redirect('login')
+				return redirect('/')
 		else:
 			messages.info(request, 'Las contraseñas no coinciden')
 			return redirect('register')
