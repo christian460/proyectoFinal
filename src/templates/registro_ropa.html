@@ -16,46 +16,8 @@
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>Bienvenido<br>
-                                Ingrese los Datos de la prenda</h3><br>
-                            <form class="row contact_form" action="ropa/regisropa" method="post">
-                                {% csrf_token %}
-                                <table align="center">
-                                    <tr>
-                                        <td HEIGHT="40">Nombre:</td> 
-                                        <td HEIGHT="40"><input type="text" name="nombre" placeholder="Nombre" required></td>
-                                    </tr><br>
-                                    <tr>
-                                        <td HEIGHT="40">Modelo:</td> 
-                                        <td HEIGHT="40"><input type="file" name="modelo" placeholder="Modelo" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Color:</td> 
-                                        <td HEIGHT="40"><input type="text" name="color" placeholder="Color" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Material:</td> 
-                                        <td HEIGHT="40"><input type="text" name="material" placeholder="Material" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Talla:</td> 
-                                        <td HEIGHT="40"><input type="text" name="talla" placeholder="Talla" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Precio:</td> 
-                                        <td HEIGHT="40"><input type="text" name="pre" placeholder="Precio" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40">Esta en oferta: </td> 
-                                        <td HEIGHT="40"><input type="radio" name="prom" value="True"> Si</td>
-                                        <td HEIGHT="40"><input type="radio" name="prom" value="False"> No</td>
-                                    </tr>
-                                    <tr>
-                                        <td HEIGHT="40"><input type="submit" value="Registrar"></td>
-                                    </tr>
-                                </table>
-                                
-                            </form>
-                            <form method='POST' action="" enctype="multipart/form-data">{% csrf_token %}
+                                Ingrese los Datos de la prenda</h3><br>                           
+                            <form method='POST' action="ropa/regisropa" enctype="multipart/form-data">{% csrf_token %}
                                 {{ form.as_p }}
                                 <input type="submit" value="subir"/>
                             </form>
