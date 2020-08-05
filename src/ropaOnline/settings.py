@@ -129,3 +129,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'cliente.Cliente'
+
+EMAIL_HOST= 'smtp.googlemail.com'
+EMAIL_PORT= 587
+EMAIL_HOST_USER= 'modatop.tiendaonline@gmail.com'
+EMAIL_HOST_PASSWORD = 'modatop64'
+EMAIL_USE_TLS =True
