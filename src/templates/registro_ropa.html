@@ -16,10 +16,13 @@
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>Bienvenido<br>
-                                Ingrese los Datos de la prenda</h3><br>                           
+                                Ingrese los Datos de la prenda</h3><br>
+                           
                             <form method='POST' action="ropa/regisropa" enctype="multipart/form-data">{% csrf_token %}
+                                
                                 {{ form.as_p }}
                                 <input type="submit" value="subir"/>
+                                
                             </form>
                             <div>
                                 {% for message in messages %}

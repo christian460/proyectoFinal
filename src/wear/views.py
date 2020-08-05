@@ -20,12 +20,14 @@ def regisropa(request):
 		if form.is_valid():
 			print(form.cleaned_data)
 			Wear.objects.create(**form.cleaned_data)
+			return redirect ("/")
 		else:
 			print(form.errors)
 
 	context = {
 		'form':form
 	}
+
 	return render(request,'registro_ropa.html',context)
 
 def createWear(request):
