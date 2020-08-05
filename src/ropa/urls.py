@@ -7,5 +7,6 @@ urlpatterns=[
 	path("login", views.login, name="login"),
 	path("regisropa", views.regisropa, name="regisropa"),
 	path("contactar", views.contactar, name="contactar"),
+	path('correo_prom',views.correo_prom, name="correo_prom"),
 	path('cliente/', include('cliente.urls')),
 ]

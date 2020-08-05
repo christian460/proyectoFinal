@@ -1,6 +1,9 @@
+from django.conf import settings
 from django.shortcuts import render,redirect
 from .models import Ropa
 from django.contrib import messages
+from django.template.loader import get_template
+from django.core.mail import EmailMultiAlternatives
 # Create your views here.
 
 def index(request):
@@ -16,14 +19,14 @@ def login(request):
 def regisropa(request):
 	if request.method == 'POST':
 		nombre = request.POST['nombre']
-		modelo = request.POST['modelo']
+		modelo = request.FILES['modelo']
 		des = request.POST['des']
 		cat = request.POST['cat']
 		pre=request.POST['pre']
 		prom=request.POST['prom']
 		rops=Ropa.objects.all()
 		for rop in rops:
-			if rop.nombre!=nombre and rop.modelo!=modelo:
+			if rop.nombre==nombre and rop.modelo==modelo:
 				messages.info(request,'Esta prenda ya existe')
 				return redirect('regisropa')
 			ropa=Ropa.objects.create(nombre=nombre, modelo=modelo, des=des, cat=cat, pre=pre, prom=prom)
@@ -34,3 +37,26 @@ def regisropa(request):
 
 def contactar(request):
 	return render(request,"contact.html")
+
+def correo_prom(request):
+	if request.method == 'POST':
+		asunto=request.POST['asunto']
+		mensaje=request.POST['mensaje']
+		correo=request.POST['correo']
+		envio_prom(asunto,mensaje,correo)
+		return redirect('/')
+	else:
+		return render(request,'correo_prom.html')
+
+def envio_prom(asunto,mensaje,correo):
+	context={'asunto':asunto,'mensaje':mensaje}
+	template= get_template('prom.html')
+	content= template.render(context)
+	email= EmailMultiAlternatives(
+		'Un correo',
+		'django',
+		settings.EMAIL_HOST_USER,
+		[correo]
+	)
+	email.attach_alternative(content,'text/html')
+	email.send()
