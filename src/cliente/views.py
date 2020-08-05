@@ -36,7 +36,6 @@ def registro(request):
 
 def login(request):
 	if request.method == 'POST':
-		print('lol')
 		username = request.POST['username']
 		password = request.POST['password']
 		user = auth.authenticate(username=username,password=password)
@@ -56,5 +55,8 @@ def cerrarSesion(request):
 
 def regreso(request):
 	return redirect('/')
+
+def correo(request):
+	return render(request,'correo.php')
 
 
