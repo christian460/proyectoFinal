@@ -16,6 +16,18 @@ def regreso(request):
 def login(request):
 	return render(request,"login.html")
 
+def rop_hom(request):
+	rops=Ropa.objects.all()
+	return render(request,'rop_hom.html',{'rops':rops})
+
+def rop_muj(request):
+	rops=Ropa.objects.all()
+	return render(request,'rop_muj.html',{'rops':rops})
+
+def rop_tod(request):
+	rops=Ropa.objects.all()
+	return render(request,'rop_tod.html',{'rops':rops})
+
 def regisropa(request):
 	if request.method == 'POST':
 		nombre = request.POST['nombre']
