@@ -17,7 +17,7 @@
                         <div class="login_part_form_iner">
                             <h3>Bienvenido<br>
                                 Ingrese los Datos de la prenda</h3><br>
-                            <form class="row contact_form" action="ropa/regisropa" method="post">
+                            <form class="row contact_form" action="ropa/regisropa" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <table align="center">
                                     <tr>
@@ -34,7 +34,10 @@
                                     </tr>
                                     <tr>
                                         <td HEIGHT="40">Categoria:</td> 
-                                        <td HEIGHT="40"><input type="text" name="cat" placeholder="Categoria" required></td>
+                                        <td HEIGHT="40"><select name="cat" required>
+                                            <option value="Hombre">Hombre</option>
+                                            <option value="Mujer">Mujer</option>
+                                        </select></td>
                                     </tr>
                                     <tr>
                                         <td HEIGHT="40">Precio:</td> 
@@ -43,10 +46,10 @@
                                     <tr>
                                         <td HEIGHT="40">Esta en oferta: </td> 
                                         <td HEIGHT="40"><input type="radio" name="prom" value="True"> Si</td>
-                                        <td HEIGHT="40"><input type="radio" name="prom" value="False"> No</td>
+                                        <td HEIGHT="40"><input type="radio" name="prom" value="False"> No</td><br><br>
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40"><input type="submit" value="Registrar"></td>
+                                        <td HEIGHT="80"><input type="submit" class="btn_3" value="Registrar"></td>
                                     </tr>
                                 </table>
                                 

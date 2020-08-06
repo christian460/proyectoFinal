@@ -1,0 +1,35 @@
+<section class="new_arrival section_padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="arrival_tittle">
+                        <h2>Prendas para Hombres</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-left: 45px" class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="new_arrival_iner filter-container">
+                        {% for rop in rops %}
+                        {% if rop.cat == 'Hombre'%}
+                        <div class="single_arrivel_item weidth_1 mix shoes">
+                            <img src="media/{{rop.modelo}}">
+                            <div class="hover_text">
+                                <p>{{rop.nombre}}</p>
+                                <a href="single-product.html"><h3>{{rop.des}}</h3></a>
+                                <h5>${{rop.pre}}</h5>
+                                <div class="social_icon">
+                                    <a href="#"><i class="ti-heart"></i></a>
+                                    <a href="#"><i class="ti-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
