@@ -59,4 +59,3 @@ def regreso(request):
 def correo(request):
 	return render(request,'correo.php')
 
-
