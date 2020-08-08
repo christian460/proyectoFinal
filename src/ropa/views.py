@@ -47,6 +47,30 @@ def regisropa(request):
 	else:
 		return render(request,'registro_ropa.html')
 
+def modificar(request):
+	rops=Ropa.objects.all()
+	if request.method == 'POST':
+		nombre = request.POST['nombre']
+		modelo = request.FILES['modelo']
+		des = request.POST['des']
+		cat = request.POST['cat']
+		pre=request.POST['pre']
+		prom=request.POST['prom']
+		for rop in rops:
+			if rop.nombre!=nombre:
+				messages.info(request,'Esta prenda no existe')
+				return redirect('regisropa')
+			else:
+				rop.modelo=modelo
+				rop.des=des
+				rop.cat=cat
+				rop.pre=pre
+				rop.prom=prom
+				rop.save();
+				return redirect('/')
+	else:
+		return render(request,'modificar_rop.html',{'rops':rops})
+
 def contactar(request):
 	return render(request,"contact.html")
 

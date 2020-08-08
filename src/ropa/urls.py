@@ -12,4 +12,5 @@ urlpatterns=[
 	path("rop_hom", views.rop_hom, name="rop_hom"),
 	path("rop_muj", views.rop_muj, name="rop_muj"),
 	path("rop_tod", views.rop_tod, name="rop_tod"),
+	path("modificar", views.modificar, name="modificar"),
 ]
