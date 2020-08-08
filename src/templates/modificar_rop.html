@@ -1,0 +1,84 @@
+<section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Home / Modificar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
+    <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3>Bienvenido<br>
+                                Ingrese los nuevos datos de la prenda</h3><br>
+                            <table>
+                                <tr>
+                                    <td WIDTH="100" HEIGHT="50">Nombre</td>
+                                    <td WIDTH="100" HEIGHT="50">Modelo</td>
+                                    <td WIDTH="100" HEIGHT="50">Descripcion</td>
+                                    <td WIDTH="100" HEIGHT="50">Categria</td>
+                                    <td WIDTH="100" HEIGHT="50">Precio</td>
+                                    <td WIDTH="100" HEIGHT="50">Oferta</td>
+                                </tr>
+                                {% for rop in rops %}
+                                <tr>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.nombre}}</td>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.modelo}}</td>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.des}}</td>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.cat}}</td>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.pre}}</td>
+                                    <td WIDTH="100" HEIGHT="50">{{rop.prom}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table><br>
+                            <form class="row contact_form" action="ropa/regisropa" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <table align="center">
+                                    <tr>
+                                        <td HEIGHT="40">Nombre:</td> 
+                                        <td HEIGHT="40"><input type="text" name="nombre" placeholder="Nombre" required></td>
+                                    </tr><br>
+                                    <tr>
+                                        <td HEIGHT="40">Modelo:</td> 
+                                        <td HEIGHT="40"><input type="file" name="modelo" placeholder="Modelo" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Descripcion:</td> 
+                                        <td HEIGHT="40"><input type="text" name="des" placeholder="Descripcion" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Categoria:</td> 
+                                        <td HEIGHT="40"><select name="cat" required>
+                                            <option value="Hombre">Hombre</option>
+                                            <option value="Mujer">Mujer</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Precio:</td> 
+                                        <td HEIGHT="40"><input type="text" name="pre" placeholder="Precio" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Esta en oferta: </td> 
+                                        <td HEIGHT="40"><input type="radio" name="prom" value="True"> Si</td>
+                                        <td HEIGHT="40"><input type="radio" name="prom" value="False"> No</td><br><br>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="80"><input type="submit" class="btn_3" value="Registrar"></td>
+                                    </tr>
+                                </table>
+                                
+                            </form>
+                            <div>
+                                {% for message in messages %}
+                                    <h3> {{message}} </h3>
+                                {% endfor %}
+                            </div> 
+                        </div>
+                    </div>
+                </div>
