@@ -1,9 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import auth
 from .models import User
 from .forms import UserForm
+from .models import Profile
+from shoping_cart.models import Order
+
 # Create your views here.
 
 def register(request):    
@@ -25,7 +28,7 @@ def register(request):
                 user= User.objects.create_user(password=password, email=email, first_name=first_name, last_name=last_name, phone=phone, direction=direction)
                 user.save();
                 print ('Usuario creado')
-                return redirect('login')
+                return redirect('/')
         else:
             messages.info(request, 'Las contraseñas no coinciden')
             return redirect('register')
@@ -55,3 +58,12 @@ def logout(request):
 
 def regreso(request):
 	return redirect('/')
+
+def profile(request):
+	user_profile = Profile.objects.filter(user=request.user).first()
+	user_orders = Order.objects.filter(is_ordered=True, owner=user_profile)
+	context = {
+		'user_orders': user_orders
+	}
+
+	return render(request, "profile.html", context)
