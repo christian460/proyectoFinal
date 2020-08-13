@@ -1,0 +1,64 @@
+.login_part_form_iner {
+    background-color:transparent;
+    width: 30.3%;
+    margin: 20px auto;
+    text-decoration:none;
+    border: 1px solid gray; 
+    border-radius: 20px; 
+}
+.login_part_form_iner li {
+    text-decoration: none;
+    list-style-type:none;
+    
+}
+.login_part_form_iner input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    border-radius: 20px;
+}
+.login_part_form_iner textarea{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid gray;
+    border-radius: 20px
+}
+.login_part_form_iner input[type=checkbox] {
+    width: 10%;        
+}
+.login_part_form_iner input[type=submit] {   
+    border: none;
+ 	outline: none;
+ 	height: 40px;
+ 	background: #CC0101;
+ 	color: white;
+ 	font-size: 18px;
+ 	border-radius: 20px;
+}
+.login_part_form_iner input[type=file] {   
+    border: none;
+ 	outline: none;
+ 	height: 40px; 	
+ 	color: gray;
+ 	font-size: 18px;
+ 	border-radius:0px;
+}
+.login_part_form_iner label{
+    display: block;
+    font-size: 1.3rem;
+}
+.login_part_form_iner input{
+    width: 100%;
+}
+
+.login_part_form_iner form{
+    padding: 25px;
+}
+.login_part_form_iner input[type="radio"]{
+    width: 10%;
+}
+.login_part_form_iner p{
+	margin: 15px auto;
+	text-align: left;
+	font-size: 22px;
+}
