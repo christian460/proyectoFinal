@@ -9,13 +9,13 @@ class WearForm(forms.Form):
 			'placeholder': 'Escriba una descripcion detallada, por favor',
 			'id': 'nombreID',
 			'class': 'special',
-			'cols': '66',
-			'rows': '3',
+			'cols': '40',
+			'rows': '2',
 			}
 
 		)
 	)
-    quant = forms.IntegerField(label = 'Cantidad', initial = 100)
-    price = forms.IntegerField(label = 'Precio', initial = 100)
+    quant = forms.IntegerField(label = 'Cantidad', initial = 10)
+    price = forms.IntegerField(label = 'Precio', initial = 50)
     gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect())
     offer = forms.BooleanField(label = 'Promociòn', required = False, initial = None)
