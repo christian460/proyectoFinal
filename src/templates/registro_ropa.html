@@ -1,3 +1,9 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/regisropa.css' %}">
+    </head>
+</html>
 <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -12,18 +18,26 @@
         </div>
     </section><br>
 
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6" style="width: 100%;max-width: 100%;">
                     <div class="login_part_form">
+                        <h3 style="margin: 0 auto;
+                        left: 15%;
+                        text-align: center;
+                        background-color: #e9ecef;
+                        padding: 13px;
+                        width: 30.3%;
+                        color:gray;">Bienvenido<br>
+                            Ingrese los Datos de la prenda</h3><br>  
                         <div class="login_part_form_iner">
-                            <h3>Bienvenido<br>
-                                Ingrese los Datos de la prenda</h3><br>
-                           
-                            <form method='POST' action="ropa/regisropa" enctype="multipart/form-data">{% csrf_token %}
+                       
+                                                     
+                            <form method='POST' action="regisropa" enctype="multipart/form-data">{% csrf_token %}
                                 
                                 {{ form.as_p }}
                                 <input type="submit" value="subir"/>
                                 
                             </form>
+                      
                             <div>
                                 {% for message in messages %}
                                     <h3> {{message}} </h3>
