@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
 <script>    
@@ -73,3 +74,92 @@ $(document).ready(function(){
     </div>
 </body>
 </html>
+=======
+<html>
+<head>
+<script>    
+$(document).ready(function(){
+    $("#registrar").click(function(){
+    $("#demo").load("cliente/registro")
+    });
+});
+</script>
+</head>
+<body>
+<div id="demo">
+<section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Home / Login</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--================login_part Area =================-->
+    <section class="login_part section_padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_text text-center">
+                        <div class="login_part_text_iner">
+                            <h2>Eres nuevo aqui?</h2>
+                            <p>No te pierdas los beneficios que tiene el tener una cuenta</p>
+                            <a id="registrar" class="btn_3">Create una cuenta</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3>Bienvenido de nuevo<br>
+                                Inicia Sesión Ahora</h3>
+                            <form class="row contact_form" action="cliente/login" method="post" novalidate="novalidate">
+                            {% csrf_token %}
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class="btn_3" >
+                                        Iniciar Sesion
+                                    </button>
+                                    
+                                </div>
+                            </form>
+                            <div>
+                                {% for message in messages %}
+                                    <h3> {{message}} </h3>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script>
+        $(function(){
+            $('#iniciar').click(function(){
+                $('cliente/login',{
+                    username:"christian",
+                    password:"170801"
+                },function(data,status{
+                   console.log(data) 
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+>>>>>>> dd66851f4c4eff7c07db8aa5e7f893671425e20a

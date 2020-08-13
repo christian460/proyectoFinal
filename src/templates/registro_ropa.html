@@ -33,11 +33,15 @@
                                                      
                             <form method='POST' action="regisropa" enctype="multipart/form-data">{% csrf_token %}
                                 
+<<<<<<< HEAD
                                 {{ form.as_p }}
                                 <input type="submit" value="subir"/>
                                 
                             </form>
                       
+=======
+                            </form>
+>>>>>>> dd66851f4c4eff7c07db8aa5e7f893671425e20a
                             <div>
                                 {% for message in messages %}
                                     <h3> {{message}} </h3>
