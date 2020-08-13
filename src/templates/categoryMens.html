@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!--================Home Banner Area =================-->
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Home / Category</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--================Category Product Area =================-->
+    <section class="cat_product_area section_padding border_top" style="padding: 50px 0;">
+        <div class="container">
+            <div class="row">            
+                <div class="col-lg-9">
+                    <div class="row">                                           
+                        
+                        <div class="col-lg-12">
+                            <div class="product_top_bar d-flex justify-content-between align-items-center" style="margin-bottom: 10px;">
+                                <div class="single_product_menu product_bar_item">
+                                    <h2>Hombres</h2>
+                                </div>                                
+                            </div>
+                        </div>        
+                        {% for wear in wears %}
+                        {% if wear.gender == 'M' %}            
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_category_product">
+                                
+                                <div class="single_category_img">
+                                    <img src="{{ wear.img.url }}" alt="">
+                                    <div class="category_social_icon">
+                                        <ul>
+                                            <li><a href="#">{{wear.quant}}</a></li>  
+                                            {%if wear.offer %}
+                                            <li><a href="#"><i class="ti-gift"></i></a></li>   
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <div class="category_product_text">
+                                        <a href="/category/singleProduct/{{wear.id}}"><h2>{{wear.name}}</h2></a>
+                                        <a href="single-product.html"><h4>{{wear.desc}}</h4></a>                                        
+                                        <p>${{wear.price}}</p>
+                                        
+                                                                            
+                                        {% if wear in user.profile.wears.all %}                                                                           
+                                        <a href="/my_profile" class="btn btn-warning">Historial de Compras</a>                                     
+                                        {% elif wear in current_order_wears %}
+                                        <a href="../shoping_cart/order-summary" class="btn btn-warning">Hacia el Carrito de Compras</a>                                    
+                                        {% else %}
+                                        <a href="../shoping_cart/add-to-cart/{{wear.id}}/" class="btn btn-warning">Añadir <i class="ti-bag"></i></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>  
+                        {% endif %}
+                        {% endfor %}                    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!--================End Category Product Area =================-->
+    <script>
+        function cambio(html,funcion){
+            var xhttp= new XMLHttpRequest();
+            xhttp.onreadystatechange == function(){
+                if(this.readyState == 4 && this.status==200){
+                    funcion(this);
+                }
+                xhttp.open("GET",html,true);
+                xhttp.send();
+            }
+            
+        }
+        function login(xhttp){
+           document.getElementById("demo").innerHTML=xhttp.responseText; 
+        }
+    </script>
+    <!-- free shipping here -->
+    <section class="shipping_details section_padding border_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_shopping_details">
+                        <img src="{% static 'img/icon/icon_1.png' %}" alt="">
+                        <h4>Free shipping</h4>
+                        <p>Divided face for bearing the divide unto seed winged divided light Forth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_shopping_details">
+                        <img src="{% static 'img/icon/icon_2.png' %}" alt="">
+                        <h4>Free shipping</h4>
+                        <p>Divided face for bearing the divide unto seed winged divided light Forth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_shopping_details">
+                        <img src="{% static 'img/icon/icon_3.png' %}" alt="">
+                        <h4>Free shipping</h4>
+                        <p>Divided face for bearing the divide unto seed winged divided light Forth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_shopping_details">
+                        <img src="{% static 'img/icon/icon_4.png' %}" alt="">
+                        <h4>Free shipping</h4>
+                        <p>Divided face for bearing the divide unto seed winged divided light Forth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- free shipping end -->
+    
+    {% endblock %} 
