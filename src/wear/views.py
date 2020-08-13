@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect, get_object_or_404
 from .models import Wear
 from django.contrib import messages
-from .forms import WearForm
+from .forms import WearForm, WearForm2
 from accounts.models import User, Profile
 from shoping_cart.models import Order
 
@@ -50,8 +50,37 @@ def createWear(request):
 	}
 	return render(request,'registro_ropa.html',context)
 
-def contactar(request):
-	return render(request,"contact.html")
+def editWear(request,myID):
+	wear = get_object_or_404(Wear,id = myID)		
+	form = WearForm2(request.POST or None, instance = wear)	
+	if form.is_valid():
+		form.save()
+		form = WearForm()
+		return redirect ('/')
+
+	context = {
+		'form':form
+	}
+
+	return render(request, 'edit_ropa.html', context)
+
+def deleteWear(request, myID):
+	obj = get_object_or_404(Wear,id = myID)
+	if request.method == 'POST':
+		print("Borrado")
+		obj.delete()
+		return redirect('/')			
+	context = {
+		'objeto' : obj,
+	}		
+	return render(request,'delete_ropa.html',context)
+
+def listWear(request):
+	queryset = Wear.objects.all()
+	context ={
+		'objectList': queryset
+	}
+	return render(request, 'listWear.html',context)
 
 def category(request):
 	wears = Wear.objects.all()
