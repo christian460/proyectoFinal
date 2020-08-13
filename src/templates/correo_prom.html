@@ -1,0 +1,48 @@
+<section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Home / Correo de promocion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
+    <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3>Bienvenido<br>
+                                Ingrese el correo electronico a enviar</h3><br>
+                            <form class="row contact_form" action="ropa/correo_prom" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <table align="center">
+                                    <tr>
+                                        <td HEIGHT="40">Correo:</td> 
+                                        <td HEIGHT="40"><input type="text" name="correo" placeholder="Correo" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Asunto:</td> 
+                                        <td HEIGHT="40"><input type="text" name="asunto" placeholder="Asunto" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Mensaje:</td> 
+                                        <td HEIGHT="40"><textarea name="mensaje" placeholder="Mensaje" required></textarea> </td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="80"><input type="submit" class="btn_3" value="Enviar"></td>
+                                    </tr>
+                                </table>
+                                
+                            </form>
+                            <div>
+                                {% for message in messages %}
+                                    <h3> {{message}} </h3>
+                                {% endfor %}
+                            </div> 
+                        </div>
+                    </div>
+                </div>
