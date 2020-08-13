@@ -67,4 +67,17 @@ def correo_prom(request):
 	else:
 		return render(request,'correo_prom.html')
 
+def envio_prom(asunto,mensaje,correo):
+	context={'asunto':asunto,'mensaje':mensaje}
+	template= get_template('prom.html')
+	content= template.render(context)
+	email= EmailMultiAlternatives(
+		'Un correo',
+		'django',
+		settings.EMAIL_HOST_USER,
+		[correo]
+	)
+	email.attach_alternative(content,'text/html')
+	email.send()
+
 
