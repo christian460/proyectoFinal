@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+		
+    <table class="table table-hover table-bordered text-center" style="margin: 4rem auto;width: 60%;">
+        <tr class="text-center">
+            <th><a href="/">Regresar</a></th>        
+          </tr>    
+    </table>    
+    <table class="table table-hover table-bordered text-center" style="margin: 4rem auto;width: 60%;">
+        <tr class="text-center">
+          <th>Nº</th>
+          <th>Productos</th>
+          <th>Imagen</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Eliminar</th>
+        </tr>
+        {% for instance in objectList %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td> {{ instance.name }}</td>
+            <td><img src="{{ instance.img.url }}" alt="" style="width: 100px;"></td>
+            <td><a href="/editWear/{{instance.id}}">{{ instance.desc }} </a></td>
+            <td> ${{ instance.price }}</td>
+            <td> <a href="/editWear/{{instance.id}}/delete"><i class="fas fa-trash"></a></i></td>
+        </tr>
+        {% endfor %}
+    </table>            
+    	
+</section>
+{% endblock %}

@@ -44,7 +44,8 @@
         });
         $("#regis_ropa").click(function(){
             $("#demo").load("/regisropa")
-        });       
+        });
+               
     });
     </script>
     <script>
@@ -72,7 +73,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-11">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="cliente/regreso"> <img Width="130px" src="{% static 'img/logo.png' %}" alt="logo"> </a>
+                        <a class="navbar-brand" href="/"> <img Width="130px" src="{% static 'img/logo.png' %}" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +104,10 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" id="regis_ropa"> 
                                             Agregar   
-                                        </a>
+                                        </a>                                        
+                                        <a class="dropdown-item" href="/listWear"> 
+                                            Listar   
+                                        </a>                                        
                                         <a class="dropdown-item" href="/shoping_cart/order-summary">Carta de compras</a>
                                     </div>
                                     </li>

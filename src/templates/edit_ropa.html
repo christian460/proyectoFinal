@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head><link rel="stylesheet" href="{% static 'css/regisropa.css' %}"></head>
+<section>
+	<div class="title">Modificar Producto</div>
+	    <div class="login_part_form_iner">
+	        <form method="POST" enctype="multipart/form-data"> {% csrf_token %} 
+		            {{ form.as_p }}
+                    <input type="submit" value="Guardar Cambios" />
+	    	    
+                     <p><a href="delete" style="width: 100%;text-decoration: underline;">Borrar</a>     </p>                
+		        
+            </form>
+      </div>	    
+</section>
+{% endblock %}
