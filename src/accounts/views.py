@@ -6,6 +6,9 @@ from .models import User
 from .forms import UserForm
 from .models import Profile
 from shoping_cart.models import Order
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
+from django.template.loader import get_template
 
 # Create your views here.
 
@@ -67,3 +70,26 @@ def profile(request):
 	}
 
 	return render(request, "profile.html", context)
+
+def correo_prom(request):
+	if request.method == 'POST':
+		asunto=request.POST['asunto']
+		mensaje=request.POST['mensaje']
+		correo=request.POST['correo']
+		envio_prom(asunto,mensaje,correo)
+		return redirect('/')
+	else:
+		return render(request,'correo_prom.html')
+
+def envio_prom(asunto,mensaje,correo):
+	context={'asunto':asunto,'mensaje':mensaje}
+	template = get_template('prom.html')
+	content= template.render(context)
+	email= EmailMultiAlternatives(
+		asunto,
+		'django',
+		settings.EMAIL_HOST_USER,
+		[correo]
+	)
+	email.attach_alternative(content,'text/html')
+	email.send()

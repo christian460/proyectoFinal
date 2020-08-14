@@ -1,3 +1,10 @@
+<head>
+    <style>
+        .table input[type=textarea]{
+            width: 100%;
+        }
+    </style>
+</head>
 <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -12,25 +19,33 @@
         </div>
     </section><br>
 
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6" style="max-width: 100%;">
                     <div class="login_part_form">
-                        <div class="login_part_form_iner">
+                        <div class="login_part_form_iner" style="border:none; width:30%;">
                             <h3>Bienvenido<br>
                                 Ingrese el correo electronico a enviar</h3><br>
-                            <form class="row contact_form" action="ropa/correo_prom" method="post" enctype="multipart/form-data">
+                            <form class="row contact_form" action="/correo_prom/" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                <table align="center">
+                                <table align="center" style="width: 100%;">
                                     <tr>
                                         <td HEIGHT="40">Correo:</td> 
+                                       
+                                    </tr>
+                                    <tr>
+                                       
                                         <td HEIGHT="40"><input type="text" name="correo" placeholder="Correo" required></td>
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40">Asunto:</td> 
-                                        <td HEIGHT="40"><input type="text" name="asunto" placeholder="Asunto" required></td>
+                                        <td HEIGHT="40">Asunto:</td>                                         
                                     </tr>
                                     <tr>
-                                        <td HEIGHT="40">Mensaje:</td> 
-                                        <td HEIGHT="40"><textarea name="mensaje" placeholder="Mensaje" required></textarea> </td>
+                                       <td HEIGHT="40"><input type="text" name="asunto" placeholder="Asunto" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td HEIGHT="40">Mensaje:</td>                                        
+                                    </tr>
+                                    <tr>                                        
+                                        <td HEIGHT="40"><textarea name="mensaje" cols="63"placeholder="Mensaje" required></textarea> </td>
                                     </tr>
                                     <tr>
                                         <td HEIGHT="80"><input type="submit" class="btn_3" value="Enviar"></td>

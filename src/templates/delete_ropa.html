@@ -6,14 +6,14 @@
     <head><link rel="stylesheet" href="{% static 'css/regisropa.css' %}"></head>
 </head>
 <section>	
-    <div class="login_part_form_iner">
+    <div class="login_part_form_iner" style="border:none">
 	<form action="" method="POST"> 
 		{% csrf_token %}	
 
 		<h2> {{ objeto.desc }}</h2>			
 		<input type="submit" value="Eliminar"><br>
 		<div class="negar">
-			<a href="../../{{objeto.id}}" >Cancelar</a>
+			<a href="/listWear" >Cancelar</a>
 		</div>
 	</form>
 	</div>
