@@ -25,7 +25,6 @@
             </div>
         </div>
     </section>
-    <!-- banner part start-->
 
     <!-- feature_part start-->
     <section class="feature_part pt-4">
@@ -63,23 +62,6 @@
     <!-- new arrival part here -->
     
     </div>
-    <!-- new arrival part end -->
-    <script>
-        function cambio(html,funcion){
-            var xhttp= new XMLHttpRequest();
-            xhttp.onreadystatechange == function(){
-                if(this.readyState == 4 && this.status==200){
-                    funcion(this);
-                }
-                xhttp.open("GET",html,true);
-                xhttp.send();
-            }
-            
-        }
-        function login(xhttp){
-           document.getElementById("demo").innerHTML=xhttp.responseText; 
-        }
-    </script>
 
     <!-- free shipping here -->
     <section class="shipping_details section_padding">
